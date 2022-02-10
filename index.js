@@ -12,22 +12,22 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "*",
+    origin: ['https://hopeful-pasteur-d710ff.netlify.app/', '*'],
     allowedHeaders: "Access-Control-Allow-Origin",
     methods: ["GET", "POST"],
     credentials: true,
   })
 );
 app.use("/api", cors());
+app.options("/api", cors);
 app.use("/api", cookieParser());
 app.use("/api", router);
 app.use("/auth", router);
-app.options("/api", cors);
 
 const start = async () => {
   try {
     await mongoose.connect(MONGODB_KEY);
-    await app.listen(PORT, console.log(`Server started on port ${PORT}`));
+    app.listen(PORT, console.log(`Server started on port ${PORT}`));
   } catch (error) {
     console.log(error.message);
   }
