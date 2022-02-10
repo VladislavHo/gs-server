@@ -13,7 +13,8 @@ app.use(express.json());
 app.use(
   cors({
     origin: '*',
-    allowedHeaders: "Access-Control-Allow-Origin",
+    allowedHeaders: ["Access-Control-Allow-Origin", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"],
+    
     methods: ["GET", "POST"],
     credentials: true,
   })
