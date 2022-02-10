@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser")
 
 const PORT = process.env.PORT || 5000;
-const CLIENT_URL = 'http://localhost:8080'
+const CLIENT_URL = 'https://hopeful-pasteur-d710ff.netlify.app/'
 const MONGODB_KEY = process.env.MONGODB_KEY
 const app = express()
 
