@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ['https://hopeful-pasteur-d710ff.netlify.app/', '*'],
+    origin: '*',
     allowedHeaders: "Access-Control-Allow-Origin",
     methods: ["GET", "POST"],
     credentials: true,
