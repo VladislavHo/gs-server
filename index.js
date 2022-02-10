@@ -5,18 +5,17 @@ const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser")
 
 const PORT = process.env.PORT || 5000;
-const CLIENT_URL = 'https://hopeful-pasteur-d710ff.netlify.app/'
+// const CLIENT_URL = 'https://hopeful-pasteur-d710ff.netlify.app/'
 const MONGODB_KEY = process.env.MONGODB_KEY
 const app = express()
 
 
 app.use(express.json())
-app.use(cors({ origin: [CLIENT_URL, "*"], credentials: true }));
+app.use(cors({ origin: [PORT, "*"], credentials: true }));
 app.use('/api', router)
 app.use('/auth', router)
 app.use('/api', cors())
 app.use('/api', cookieParser())
-
 
 
 const start = async() =>{
